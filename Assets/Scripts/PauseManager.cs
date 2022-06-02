@@ -7,19 +7,23 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameMenu;
     bool pause = false;
-     
+    bool otherMenu = false;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void ChangeOtherMenu()
     {
-        
+        otherMenu = !otherMenu;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            ChangePauseMenu();
+        if (!otherMenu)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && !otherMenu)
+            {
+                ChangePauseMenu();
+            }
         }
     }
 

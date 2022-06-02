@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3.0f;
-    // Start is called before the first frame update
 
     public KeyCode up, down; 
 

@@ -28,4 +28,9 @@ public class PauseMenuButtons : MonoBehaviour
             textM.text = "On";
         }
     }
+
+    public void ShowControlsMenu()
+    {
+
+    }
 }
