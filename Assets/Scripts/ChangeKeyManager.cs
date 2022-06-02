@@ -3,22 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeKayManager : MonoBehaviour
+public class ChangeKeyManager : MonoBehaviour
 {
     [SerializeField] private Text text;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private ControlMenuButtons controlMenuButtons;
     bool up = true;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnGUI()
     {
@@ -39,14 +29,14 @@ public class ChangeKayManager : MonoBehaviour
                         playerMovement.down = e.keyCode;
                     }
                     gameObject.SetActive(false);
-                    controlMenuButtons.EnableDisenableButtons();
+                    controlMenuButtons.ChangeActiveButtons();
                 }
             }
         }
     }
-    public void SetBoolValue(bool upOrDown)
+    public void UpKeyControl(bool isUp)
     {
-        up = upOrDown;
+        up = isUp;
     }
 
     public void SetTextField(Text textField)

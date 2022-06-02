@@ -9,19 +9,8 @@ public class ControlMenuButtons : MonoBehaviour
     [SerializeField] private Button downChangeButton;
     [SerializeField] private Dropdown player1Dropdown;
     bool activeButtons = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void EnableDisenableButtons()
+    public void ChangeActiveButtons()
     {
         if (activeButtons)
         {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TitleMenu : MonoBehaviour
 {
-    public void Select1Player()
+    public void SelectPlayers(int players)
     {
-        PlayerControler.Instance.SetPlayers(1);
+        PlayerController.Instance.SetPlayers(players);
     }
 }

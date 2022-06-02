@@ -12,12 +12,6 @@ public class MusicManager : MonoBehaviour
         clip.volume = 0.25f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ChangeVolume(float volume)
     {
         clip.volume = volume;

@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAMovement : MonoBehaviour
+public class AIMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject ball;
+    private GameObject ball;
     public float speed = 7f;
     bool canMove = false;
-    // Start is called before the first frame update
-    void Start()
+   
+    public void Init()
     {
-        
+        ball = GameObject.FindGameObjectWithTag("Ball");
     }
+    
 
     // Update is called once per frame
     void Update()

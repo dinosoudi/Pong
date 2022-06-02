@@ -32,18 +32,14 @@ public class BallMovement : MonoBehaviour
         if (ballSpeedY > 0)
         {
             if (transform.position.y + transform.localScale.y / 2 + ballSpeedY * Time.deltaTime < 5)
-            {
                 transform.position = new Vector2(transform.position.x + ballSpeedX * Time.deltaTime, transform.position.y + ballSpeedY * Time.deltaTime);
-            }
             else
                 ballSpeedY *= -1;
         }
         else
         {
             if (transform.position.y - transform.localScale.y / 2 - ballSpeedY * Time.deltaTime > -5)
-            {
                 transform.position = new Vector2(transform.position.x + ballSpeedX * Time.deltaTime, transform.position.y + ballSpeedY * Time.deltaTime);
-            }
             else
                 ballSpeedY *= -1;
         }

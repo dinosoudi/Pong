@@ -5,23 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3.0f;
-
     public KeyCode up, down; 
-
     float actualSpeed=0;
-
     const float MAXSPEED = 3f;
-
     const float decrementSpeed = 0.05f;
-
     const float incrementSpeed = 0.1f;
-
     bool canMove = false;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

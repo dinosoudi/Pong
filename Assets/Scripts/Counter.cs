@@ -23,16 +23,20 @@ public class Counter : MonoBehaviour
     {
         actualValue = (int)textTime;
         textTime -= Time.deltaTime;
-        if (actualValue != (int)textTime) {
+        if (actualValue != (int)textTime)
+        {
             counter.text = actualValue.ToString();
         }
-        if (textTime <= 0) {
+        if (textTime <= 0)
+        {
             ball.SetActive(true);
             counter.gameObject.SetActive(false);
             gameObject.SetActive(false);
             paddle1.GetComponent<PlayerMovement>().SetMove(true);
-            //paddle2.GetComponent<PlayerMovement>().SetMove(true);
-            paddle2.GetComponent<IAMovement>().SetMove(true);
+            if (PlayerController.Instance.GetPlayers() == 1)
+                paddle2.GetComponent<AIMovement>().SetMove(true);
+            else
+                paddle2.GetComponent<PlayerMovement>().SetMove(true);
         }
     }
 
@@ -42,7 +46,9 @@ public class Counter : MonoBehaviour
         gameObject.SetActive(true);
         counter.gameObject.SetActive(true);
         paddle1.GetComponent<PlayerMovement>().SetMove(false);
-        //paddle2.GetComponent<PlayerMovement>().SetMove(false);
-        paddle2.GetComponent<IAMovement>().SetMove(true);
+        if (PlayerController.Instance.GetPlayers() == 1)
+            paddle2.GetComponent<AIMovement>().SetMove(false);
+        else
+            paddle2.GetComponent<PlayerMovement>().SetMove(false);
     }
 }

@@ -12,17 +12,6 @@ public class Score : MonoBehaviour
     [SerializeField] private GameObject paddle1;
     [SerializeField] private GameObject paddle2;
     [SerializeField] private GameObject counter;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void IncrementScorePlayer1(int value) {
         scorePlayer1 += value;
@@ -38,7 +27,10 @@ public class Score : MonoBehaviour
 
     void IncrementScore() {
         paddle1.GetComponent<PlayerMovement>().RestartPaddle();
-        paddle2.GetComponent<IAMovement>().RestartPaddle();
+        if (PlayerController.Instance.GetPlayers() == 1)
+            paddle2.GetComponent<AIMovement>().RestartPaddle();
+        else
+            paddle2.GetComponent<PlayerMovement>().RestartPaddle();
         counter.GetComponent<Counter>().Reiniciate();
     }
 }

@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public static PlayerControler Instance;
+    public static PlayerController Instance;
     [SerializeField] private int players;
     private void Awake()
     {
-        if(PlayerControler.Instance == null)
+        if(PlayerController.Instance == null)
         {
-            PlayerControler.Instance = this;
+            PlayerController.Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else
@@ -22,6 +23,11 @@ public class PlayerControler : MonoBehaviour
     public void SetPlayers(int p)
     {
         players = p;
-        Debug.Log("Players: " + players);
+        SceneManager.LoadScene("GamePong");
+    }
+
+    public int GetPlayers()
+    {
+        return players;
     }
 }
