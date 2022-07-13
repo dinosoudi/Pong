@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public float ballSpeedX = 3.0f;
-    public float ballSpeedY = 0.1f;
+    public float ballSpeedX;
+    public float ballSpeedY = 4;
+    float maxBallSpeedY = 9f;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +68,10 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Paddle"))
         {
             ballSpeedX *= -1;
+
+            float diff = transform.position.y - collision.gameObject.transform.position.y;
+            ballSpeedY = diff * maxBallSpeedY;
+
             GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayCrashSound();
         }
     }

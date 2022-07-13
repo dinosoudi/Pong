@@ -5,7 +5,7 @@ using UnityEngine;
 public class AIMovement : MonoBehaviour
 {
     private GameObject ball;
-    public float speed = 7f;
+    public float speed = 5.2f;
     bool canMove = false;
    
     public void Init()

@@ -6,9 +6,18 @@ using UnityEngine.UI;
 public class ChangeKeyManager : MonoBehaviour
 {
     [SerializeField] private Text text;
-    [SerializeField] private PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;
     [SerializeField] private ControlMenuButtons controlMenuButtons;
     bool up = true;
+
+    public void SetPlayerMovement(int player)
+    {
+        if(player == 1)
+        {
+            playerMovement = GameObject.Find("LeftPaddle").GetComponent<PlayerMovement>();
+        }else
+            playerMovement = GameObject.Find("RightPaddle").GetComponent<PlayerMovement>();
+    }
 
     public void OnGUI()
     {
@@ -28,11 +37,16 @@ public class ChangeKeyManager : MonoBehaviour
                     {
                         playerMovement.down = e.keyCode;
                     }
-                    gameObject.SetActive(false);
                     controlMenuButtons.ChangeActiveButtons();
+                    gameObject.SetActive(false);
                 }
             }
         }
+    }
+
+    public void SetActiveChangeKeyPanel()
+    {
+        gameObject.SetActive(true);
     }
     public void UpKeyControl(bool isUp)
     {

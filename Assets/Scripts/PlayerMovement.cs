@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     float actualSpeed=0;
     const float MAXSPEED = 3f;
     const float decrementSpeed = 0.05f;
-    const float incrementSpeed = 0.1f;
+    const float incrementSpeed = 0.05f;
     bool canMove = false;
 
     // Update is called once per frame
